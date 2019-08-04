@@ -1,0 +1,39 @@
+<Project>
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>latest</LangVersion>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <IsTestProject>false</IsTestProject>
+    <RepoDir>$(SolutionDir)</RepoDir>
+    <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or '$(MSBuildProjectName)' == 'Tests'">
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(IsTestProject) != true">
+    <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <GeneratePackageOnBuild Condition="$(Configuration)=='Release'">true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile Condition="$(Configuration)=='Release'">true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(IsTestProject) != true">
+    <PackageReference Condition="$(Configuration)=='Release'"
+                      Include="Microsoft.SourceLink.GitHub"
+                      Version="1.0.0-*"
+                      PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(IsTestProject)">
+
+  </ItemGroup>
+
+</Project>
