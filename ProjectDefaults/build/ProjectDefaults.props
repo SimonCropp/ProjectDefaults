@@ -15,25 +15,20 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsTestProject) != true">
+  <PropertyGroup Condition="$(IsTestProject) != true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <GeneratePackageOnBuild Condition="$(Configuration)=='Release'">true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile Condition="$(Configuration)=='Release'">true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="$(IsTestProject) != true">
-    <PackageReference Condition="$(Configuration)=='Release'"
-                      Include="Microsoft.SourceLink.GitHub"
+  <ItemGroup Condition="$(IsTestProject) != true And $(Configuration) == 'Release'">
+    <PackageReference Include="Microsoft.SourceLink.GitHub"
                       Version="1.0.0-*"
                       PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup Condition="$(IsTestProject)">
-
   </ItemGroup>
 
 </Project>
