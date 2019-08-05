@@ -8,6 +8,7 @@
     <IsTool>true</IsTool>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>..\nugets</PackageOutputPath>
+    <PackageIconUrl>https://raw.github.com/SimonCropp/ProjectDefaults/master/icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="build\*" PackagePath="build" />
