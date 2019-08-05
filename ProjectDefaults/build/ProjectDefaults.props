@@ -31,4 +31,8 @@
                       PrivateAssets="All" />
   </ItemGroup>
 
+  <PropertyGroup Condition="$(IsTestProject)">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
 </Project>
