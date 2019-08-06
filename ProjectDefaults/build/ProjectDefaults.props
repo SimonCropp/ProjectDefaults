@@ -4,7 +4,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <IsTestProject>false</IsTestProject>
