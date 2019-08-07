@@ -12,7 +12,7 @@
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or '$(MSBuildProjectName)' == 'Tests'">
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests'">
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
