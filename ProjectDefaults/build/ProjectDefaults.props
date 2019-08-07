@@ -7,16 +7,16 @@
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <IsTestProject>false</IsTestProject>
+    <IsTestOrSample>false</IsTestOrSample>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests'">
-    <IsTestProject>true</IsTestProject>
+    <IsTestOrSample>true</IsTestOrSample>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsTestProject) != true And $(Configuration) == 'Release'">
+  <PropertyGroup Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression Condition="$(PackageLicenseUrl) == ''">MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
@@ -26,13 +26,13 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="$(IsTestProject) != true And $(Configuration) == 'Release'">
+  <ItemGroup Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
     <PackageReference Include="Microsoft.SourceLink.GitHub"
                       Version="1.0.0-*"
                       PrivateAssets="All" />
   </ItemGroup>
 
-  <PropertyGroup Condition="$(IsTestProject)">
+  <PropertyGroup Condition="$(IsTestOrSample)">
     <Optimize>False</Optimize>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
