@@ -5,7 +5,8 @@
       BeforeTargets="GenerateNuspec"
     >
     <PropertyGroup>
-      <PackageProjectUrl>$(RepositoryUrl.Replace('.git', ''))</PackageProjectUrl>
+      <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrl.Replace('.git', ''))</PackageProjectUrl>
+      <RepositoryUrl Condition="$(RepositoryUrl) == ''">$(RepositoryUrl.Replace('.git', ''))</RepositoryUrl>
       <ReleaseNotes>$(PackageProjectUrl)/milestones?state=closed</ReleaseNotes>
       <PackageIconUrl>$(PackageProjectUrl.Replace('https://github.com', '%(SourceLinkGitHubHost.ContentUrl)'))/master/src/icon.png</PackageIconUrl>
     </PropertyGroup>
