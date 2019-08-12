@@ -16,6 +16,16 @@
     <IsTestOrSample>true</IsTestOrSample>
   </PropertyGroup>
 
+  <Choose>
+    <When Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
+     <ItemGroup>
+       <PackageReference Include="Microsoft.SourceLink.GitHub"
+                         Version="1.0.0-*"
+                         PrivateAssets="All" />
+     </ItemGroup>
+    </When>
+  </Choose>
+
   <PropertyGroup Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression Condition="$(PackageLicenseUrl) == ''">MIT</PackageLicenseExpression>
