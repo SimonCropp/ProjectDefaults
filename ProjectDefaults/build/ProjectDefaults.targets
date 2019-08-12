@@ -3,7 +3,7 @@
   <Target
       Name="ProjectDefaultsUpdateNuspec"
       BeforeTargets="GenerateNuspec"
-      Condition="$(Configuration) == 'Release'"
+      Condition="$(GeneratePackageOnBuild)"
     >
     <Error
        Text="No 'RepositoryUrl' defined."
