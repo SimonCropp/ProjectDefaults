@@ -26,12 +26,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
-    <PackageReference Include="Microsoft.SourceLink.GitHub"
-                      Version="1.0.0-*"
-                      PrivateAssets="All" />
-  </ItemGroup>
-
   <PropertyGroup Condition="$(IsTestOrSample)">
     <Optimize>False</Optimize>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
