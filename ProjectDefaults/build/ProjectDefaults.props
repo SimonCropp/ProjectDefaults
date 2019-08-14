@@ -10,6 +10,10 @@
     <IsTestOrSample>false</IsTestOrSample>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
+    <!-- 
+    IDE0044: dont recommend private fields
+    -->
+    <NoWarn>IDE0044</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared'">
