@@ -13,7 +13,7 @@
     <!-- 
     IDE0044: dont recommend private fields
     -->
-    <NoWarn>IDE0044</NoWarn>
+    <NoWarn>$(NoWarn);IDE0044</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared'">
