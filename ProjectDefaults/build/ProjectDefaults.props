@@ -16,7 +16,7 @@
     <NoWarn>$(NoWarn);IDE0044</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared'">
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
     <IsTestOrSample>true</IsTestOrSample>
   </PropertyGroup>
 
