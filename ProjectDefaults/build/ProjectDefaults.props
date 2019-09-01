@@ -7,7 +7,7 @@
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <IsTestOrSample Condition="$(IsTestOrSample) == ''">false</IsTestOrSample>
+    <IsPackageProject Condition="$(IsPackageProject) == ''">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
     <!-- 
@@ -17,10 +17,10 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
-    <IsTestOrSample>true</IsTestOrSample>
+    <IsPackageProject>false</IsPackageProject>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsTestOrSample) != true And $(Configuration) == 'Release'">
+  <PropertyGroup Condition="$(IsPackageProject) != false And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression Condition="$(PackageLicenseUrl) == ''">MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
@@ -30,7 +30,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(IsTestOrSample)">
+  <PropertyGroup Condition="$(IsPackageProject) == false">
     <Optimize>False</Optimize>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
