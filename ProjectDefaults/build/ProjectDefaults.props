@@ -2,12 +2,12 @@
 <Project>
   <PropertyGroup>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <LangVersion>latest</LangVersion>
+    <LangVersion Condition="$(LangVersion) == ''">latest</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <IsPackageProject Condition="$(IsPackageProject) == ''">true</IsPackageProject>
+    <IsPackageProject Condition="'$(IsPackageProject)' == ''">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
     <!-- 
@@ -22,7 +22,7 @@
 
   <PropertyGroup Condition="$(IsPackageProject) != false And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
-    <PackageLicenseExpression Condition="$(PackageLicenseUrl) == ''">MIT</PackageLicenseExpression>
+    <PackageLicenseExpression Condition="'$(PackageLicenseUrl)' == ''">MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
