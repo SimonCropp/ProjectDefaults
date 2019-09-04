@@ -18,6 +18,7 @@
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
     <IsPackageProject>false</IsPackageProject>
+    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(IsPackageProject) != false And $(Configuration) == 'Release'">
