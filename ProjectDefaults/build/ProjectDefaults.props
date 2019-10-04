@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors Condition="$(TreatWarningsAsErrors) == ''">true</TreatWarningsAsErrors>
     <LangVersion Condition="$(LangVersion) == ''">8.0</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
