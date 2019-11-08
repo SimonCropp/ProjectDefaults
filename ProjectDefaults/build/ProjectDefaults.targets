@@ -7,7 +7,7 @@
     >
     <Error
        Text="No 'RepositoryUrl' defined."
-       Condition="'$(RepositoryUrl)' == ''" />
+       Condition="'$(RepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
     <PropertyGroup>
       <RepositoryUrlEx>$(RepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
