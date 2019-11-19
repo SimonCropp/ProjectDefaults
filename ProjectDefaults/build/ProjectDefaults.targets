@@ -16,14 +16,4 @@
       <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
     </PropertyGroup>
   </Target>
-  <ItemGroup>
-    <None Update="**\*.approved.*"
-          DependentUpon="$(
-  [System.String]::Copy('%(FileName)')
-    .SubString(
-      0,
-      $([System.String]::Copy('%(FileName)').IndexOf('.'))
-    )
-).cs" />
-  </ItemGroup>
 </Project>
