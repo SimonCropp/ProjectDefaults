@@ -14,6 +14,6 @@
   <ItemGroup>
     <Content Include="build\*" PackagePath="build" />
     <Content Include="buildMultiTargeting\*" PackagePath="buildMultiTargeting" />
-    <None Include="$(SolutionDir)src\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="$(SolutionDir)icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
