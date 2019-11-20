@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.0.31</Version>
+    <Version>1.0.32</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>My project defaults</Description>
@@ -9,10 +9,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <Authors>https://github.com/SimonCropp/ProjectDefaults/graphs/contributors</Authors>
-    <PackageIconUrl>https://raw.github.com/SimonCropp/ProjectDefaults/master/icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="build\*" PackagePath="build" />
     <Content Include="buildMultiTargeting\*" PackagePath="buildMultiTargeting" />
+    <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
