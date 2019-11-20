@@ -40,4 +40,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
+    <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
 </Project>

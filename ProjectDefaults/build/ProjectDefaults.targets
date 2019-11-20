@@ -12,7 +12,7 @@
       <RepositoryUrlEx>$(RepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
       <PackageReleaseNotes>$(RepositoryUrlEx)/milestones?state=closed</PackageReleaseNotes>
-      <PackageIconUrl>$(RepositoryUrlEx.Replace('https://github.com', '%(SourceLinkGitHubHost.ContentUrl)'))/master/src/icon.png</PackageIconUrl>
+      <PackageIcon>icon.png</PackageIcon>
       <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
     </PropertyGroup>
   </Target>
