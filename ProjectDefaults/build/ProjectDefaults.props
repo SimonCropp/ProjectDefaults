@@ -38,9 +38,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
-  <ItemGroup Condition="$(Configuration) == 'Release'">
+  <ItemGroup Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
