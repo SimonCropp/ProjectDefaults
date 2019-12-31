@@ -26,7 +26,7 @@
   <PropertyGroup Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression
-      Condition="'$(PackageLicenseUrl)' == '' '$(PackageLicenseFile)' == '' " >MIT</PackageLicenseExpression>
+      Condition="'$(PackageLicenseUrl)' == '' And '$(PackageLicenseFile)' == '' " >MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
