@@ -10,7 +10,7 @@
     <IsPackageProject Condition="'$(IsPackageProject)' == ''">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
-    <!-- 
+    <!--
     IDE0044: dont recommend private fields
     -->
     <NoWarn>$(NoWarn);IDE0044</NoWarn>
@@ -25,7 +25,8 @@
 
   <PropertyGroup Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
-    <PackageLicenseExpression Condition="'$(PackageLicenseUrl)' == ''">MIT</PackageLicenseExpression>
+    <PackageLicenseExpression
+      Condition="'$(PackageLicenseUrl)' == '' '$(PackageLicenseFile)' == '' " >MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
