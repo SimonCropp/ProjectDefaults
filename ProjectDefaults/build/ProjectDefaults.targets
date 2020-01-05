@@ -6,10 +6,10 @@
       Condition="$(GeneratePackageOnBuild)"
     >
     <Error
-       Text="No 'RepositoryUrl' defined."
-       Condition="'$(RepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
+       Text="No 'ScmRepositoryUrl' defined."
+       Condition="'$(ScmRepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
     <PropertyGroup>
-      <RepositoryUrlEx>$(RepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
+      <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
       <PackageReleaseNotes>$(RepositoryUrlEx)/milestones?state=closed</PackageReleaseNotes>
       <PackageIcon>icon.png</PackageIcon>
