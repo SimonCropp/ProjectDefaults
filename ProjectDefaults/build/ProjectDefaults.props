@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
+    <SolutionDir Condition="'$(SolutionDir)'==''">$(ProjectDir)..\</SolutionDir>
     <TreatWarningsAsErrors Condition="$(TreatWarningsAsErrors) == ''">true</TreatWarningsAsErrors>
     <LangVersion Condition="$(LangVersion) == ''">8.0</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
