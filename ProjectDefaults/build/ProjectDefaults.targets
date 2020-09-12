@@ -5,7 +5,7 @@
       BeforeTargets="GenerateNuspec"
       Condition="$(GeneratePackageOnBuild)"
     >
-    <Error
+    <Warning
        Text="No 'ScmRepositoryUrl' defined."
        Condition="'$(ScmRepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
     <PropertyGroup>
