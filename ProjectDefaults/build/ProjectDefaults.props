@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SolutionDir Condition="'$(SolutionDir)'==''">$(ProjectDir)..\</SolutionDir>
     <TreatWarningsAsErrors Condition="$(TreatWarningsAsErrors) == ''">true</TreatWarningsAsErrors>
-    <LangVersion Condition="$(LangVersion) == ''">8.0</LangVersion>
+    <LangVersion Condition="$(LangVersion) == ''">9.0</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType Condition="$(DebugType) == ''">embedded</DebugType>
