@@ -10,6 +10,7 @@
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <Authors>https://github.com/SimonCropp/ProjectDefaults/graphs/contributors</Authors>
     <PackageIcon>icon.png</PackageIcon>
+    <NoWarn>NU5128</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="build\*" PackagePath="build" />
