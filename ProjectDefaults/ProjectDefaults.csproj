@@ -6,7 +6,6 @@
     <Description>My project defaults</Description>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <IsTool>true</IsTool>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <Authors>https://github.com/SimonCropp/ProjectDefaults/graphs/contributors</Authors>
     <PackageIcon>icon.png</PackageIcon>
