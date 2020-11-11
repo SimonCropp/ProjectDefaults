@@ -11,7 +11,6 @@
     <PropertyGroup>
       <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
-      <PackageReleaseNotes>$(RepositoryUrlEx)/releases/tag/$(Version)</PackageReleaseNotes>
       <PackageIcon>icon.png</PackageIcon>
       <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
     </PropertyGroup>

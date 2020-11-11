@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.0.47</Version>
+    <Version>1.0.48</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>My project defaults</Description>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <IsTool>true</IsTool>
     <PackageOutputPath>..\nugets</PackageOutputPath>
