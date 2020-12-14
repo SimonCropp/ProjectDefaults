@@ -42,4 +42,20 @@
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
+  <Target
+      Name="ProjectDefaultsUpdateNuspec"
+      BeforeTargets="GenerateNuspec"
+      Condition="$(GeneratePackageOnBuild)"
+    >
+    <Warning
+       Text="No 'ScmRepositoryUrl' defined."
+       Condition="'$(ScmRepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
+    <PropertyGroup>
+      <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
+      <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
+      <PackageIcon>icon.png</PackageIcon>
+      <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
+    </PropertyGroup>
+  </Target>
+
 </Project>
