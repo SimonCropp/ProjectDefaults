@@ -17,6 +17,7 @@
     <NoWarn>$(NoWarn);IDE0044</NoWarn>
     <Nullable>enable</Nullable>
     <RunAnalyzers Condition="$(Configuration) == 'Release'">false</RunAnalyzers>
+    <AnalysisLevel>5</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
