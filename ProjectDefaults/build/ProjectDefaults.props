@@ -33,6 +33,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ContinuousIntegrationBuild Condition="$(APPVEYOR) == true">true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(IsPackageProject) == false">
