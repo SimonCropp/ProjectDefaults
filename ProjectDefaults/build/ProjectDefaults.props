@@ -17,6 +17,8 @@
     <NoWarn>$(NoWarn);IDE0044</NoWarn>
     <Nullable>enable</Nullable>
     <RunAnalyzers Condition="$(Configuration) == 'Release'">false</RunAnalyzers>
+    <RunAnalyzersDuringBuild Condition="$(Configuration) == 'Release'">false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis Condition="$(Configuration) == 'Release'">false</RunAnalyzersDuringLiveAnalysis>
     <AnalysisLevel>5</AnalysisLevel>
   </PropertyGroup>
 
