@@ -11,6 +11,7 @@
     <IsPackageProject Condition="'$(IsPackageProject)' == ''">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
+    <ImplicitUsings>enable</ImplicitUsings>
     <!--
     IDE0044: dont recommend private fields
     -->
