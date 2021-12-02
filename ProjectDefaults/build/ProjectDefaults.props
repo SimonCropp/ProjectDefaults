@@ -20,6 +20,7 @@
     <RunAnalyzersDuringBuild Condition="$(Configuration) != 'Release'">false</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis Condition="$(Configuration) != 'Release'">false</RunAnalyzersDuringLiveAnalysis>
     <AnalysisLevel>5</AnalysisLevel>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup 
@@ -45,6 +46,9 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Using Remove="System.Net.Http" />
+  </ItemGroup>
   <ItemGroup 
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
