@@ -21,14 +21,15 @@
     <RunAnalyzersDuringLiveAnalysis Condition="$(Configuration) != 'Release'">false</RunAnalyzersDuringLiveAnalysis>
     <AnalysisLevel>5</AnalysisLevel>
     <ImplicitUsings>enable</ImplicitUsings>
+    <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
   </PropertyGroup>
 
-  <PropertyGroup 
+  <PropertyGroup
     Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
     <IsPackageProject>false</IsPackageProject>
   </PropertyGroup>
 
-  <PropertyGroup 
+  <PropertyGroup
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression
@@ -38,7 +39,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <ContinuousIntegrationBuild 
+    <ContinuousIntegrationBuild
       Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
@@ -49,7 +50,7 @@
   <ItemGroup>
     <Using Remove="System.Net.Http" />
   </ItemGroup>
-  <ItemGroup 
+  <ItemGroup
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
@@ -72,7 +73,7 @@
   <!-- Disable default Inbox Source Generators
        https://github.com/dotnet/sdk/issues/21006
        https://github.com/dotnet/designs/blob/main/accepted/2021/InboxSourceGenerators.md -->
-  <Target Name="DisableAnalyzers" 
+  <Target Name="DisableAnalyzers"
           BeforeTargets="CoreCompile"
           Condition="$(EnableAnalyzers) != true">
     <ItemGroup>
