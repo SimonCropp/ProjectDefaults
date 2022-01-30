@@ -20,7 +20,7 @@
     <RunAnalyzersDuringBuild Condition="$(Configuration) != 'Release'">false</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis Condition="$(Configuration) != 'Release'">false</RunAnalyzersDuringLiveAnalysis>
     <AnalysisLevel>5</AnalysisLevel>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">enable</ImplicitUsings>
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
   </PropertyGroup>
 
