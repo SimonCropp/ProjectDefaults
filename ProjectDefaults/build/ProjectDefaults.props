@@ -8,7 +8,7 @@
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType Condition="$(DebugType) == ''">embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <GeneratePackageOnBuild Condition="'$(GeneratePackageOnBuild)' == '' and $(Configuration) == 'Release'">true</GeneratePackageOnBuild>
+    <IsPackageProject Condition="'$(IsPackageProject)' == ''">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
     <!--
@@ -25,24 +25,25 @@
   </PropertyGroup>
 
   <PropertyGroup
-    Condition="$(MSBuildProjectName.EndsWith('.Tests')) or $(MSBuildProjectName.Contains('Sample')) or '$(MSBuildProjectName)' == 'Tests' or '$(MSBuildProjectName)' == 'Helpers' or '$(MSBuildProjectName)' == 'Shared' or '$(MSBuildProjectName)' == 'Snippets'">
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
+    <IsPackageProject>false</IsPackageProject>
   </PropertyGroup>
 
   <PropertyGroup
-    Condition="$(GeneratePackageOnBuild)">
+    Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
     <PackageLicenseExpression
       Condition="'$(PackageLicenseUrl)' == '' And '$(PackageLicenseFile)' == '' And '$(PackageLicenseExpression)' == '' " >MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+    <GeneratePackageOnBuild Condition="'$(GeneratePackageOnBuild)' == ''">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild
       Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
-  <PropertyGroup Condition="!$(GeneratePackageOnBuild)">
+  <PropertyGroup Condition="$(IsPackageProject) == false">
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
@@ -50,7 +51,7 @@
     <Using Remove="System.Net.Http" />
   </ItemGroup>
   <ItemGroup
-    Condition="$(GeneratePackageOnBuild)">
+    Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
@@ -61,7 +62,7 @@
     >
     <Warning
        Text="No 'ScmRepositoryUrl' defined."
-       Condition="'$(ScmRepositoryUrl)' == '' And $(GeneratePackageOnBuild)" />
+       Condition="'$(ScmRepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
     <PropertyGroup>
       <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
