@@ -37,7 +37,7 @@
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <GeneratePackageOnBuild Condition="'$(GeneratePackageOnBuild)' == ''">true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild
       Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
