@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>ProjectDefaults</id>
-    <version>1.0.68</version>
+    <version>1.0.69</version>
     <authors>Simon Cropp</authors>
     <developmentDependency>true</developmentDependency>
     <license type="expression">MIT</license>
@@ -20,6 +20,8 @@
     <file src="*.pp"
           target="contentFiles/cs/netstandard2.0/ProjectDefaults/"/>
 
+    <file src=".editorconfig" target=".editorconfig" />
+    <file src="Resharper.sln.DotSettings" target="Resharper.sln.DotSettings" />
     <file src="build\ProjectDefaults.props" target="build\ProjectDefaults.props" />
     <file src="buildMultiTargeting\ProjectDefaults.props" target="buildMultiTargeting\ProjectDefaults.props" />
   </files>

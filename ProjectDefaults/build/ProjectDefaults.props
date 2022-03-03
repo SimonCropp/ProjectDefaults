@@ -80,4 +80,17 @@
       <Analyzer Remove="@(Analyzer)" />
     </ItemGroup>
   </Target>
+  <EditorConfigPath>$(MSBuildThisFileDirectory)../.editorconfig</EditorConfigPath>
+  <DotSettingsPath>$(MSBuildThisFileDirectory)../Resharper.sln.DotSettings</DotSettingsPath>
+  <Target Name="conventions" BeforeTargets="Build">
+    <Copy
+         SourceFiles="$(EditorConfigPath)"
+         DestinationFolder="$(SolutionDir)"
+         SkipUnchangedFiles="true" />
+    <Copy
+         Condition="'$(SolutionName)' != ''" 
+         SourceFiles="$(DotSettingsPath)"
+         DestinationFiles="$(SolutionDir)($SolutionName).sln.DotSettings"
+         SkipUnchangedFiles="true" />
+  </Target>
 </Project>
