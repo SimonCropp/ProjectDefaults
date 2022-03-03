@@ -87,13 +87,12 @@
   <Target Name="conventions" BeforeTargets="Build">
     <Copy
          SourceFiles="$(EditorConfigPath)"
-         DestinationFolder="$(SolutionDir)"
          DestinationFiles="$(SolutionDir).editorconfig"
          SkipUnchangedFiles="true" />
     <Copy
-         Condition="'$(SolutionName)' != ''" 
+         Condition="'$(SolutionPath)' != ''" 
          SourceFiles="$(DotSettingsPath)"
-         DestinationFiles="$(SolutionDir)($SolutionName).sln.DotSettings"
+         DestinationFiles="$(SolutionPath).DotSettings"
          SkipUnchangedFiles="true" />
   </Target>
 </Project>
