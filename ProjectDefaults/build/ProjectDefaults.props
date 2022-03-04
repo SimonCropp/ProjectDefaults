@@ -80,19 +80,4 @@
       <Analyzer Remove="@(Analyzer)" />
     </ItemGroup>
   </Target>
-  <PropertyGroup>
-    <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
-    <DotSettingsPath>$(MSBuildThisFileDirectory)../Resharper.sln.DotSettings</DotSettingsPath>
-  </PropertyGroup>
-  <Target Name="conventions" BeforeTargets="Build">
-    <Copy
-         SourceFiles="$(EditorConfigPath)"
-         DestinationFiles="$(SolutionDir).editorconfig"
-         SkipUnchangedFiles="true" />
-    <Copy
-         Condition="'$(SolutionPath)' != '' And '$(SolutionPath)' != '*Undefined*'" 
-         SourceFiles="$(DotSettingsPath)"
-         DestinationFiles="$(SolutionPath).DotSettings"
-         SkipUnchangedFiles="true" />
-  </Target>
 </Project>
