@@ -90,7 +90,7 @@
          DestinationFiles="$(SolutionDir).editorconfig"
          SkipUnchangedFiles="true" />
     <Copy
-         Condition="'$(SolutionPath)' != ''" 
+         Condition="'$(SolutionPath)' != '' And '$(SolutionPath)' != '*Undefined*'" 
          SourceFiles="$(DotSettingsPath)"
          DestinationFiles="$(SolutionPath).DotSettings"
          SkipUnchangedFiles="true" />
