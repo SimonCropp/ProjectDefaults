@@ -160,6 +160,7 @@ braces_for_for = required
 indent_size = 2
 # https://www.jetbrains.com/help/resharper/EditorConfig_XML_XmlCodeStylePageSchema.html#resharper_xml_blank_line_after_pi
 blank_line_after_pi = false
+space_before_self_closing = true
 
 [*.json]
 indent_size = 2
