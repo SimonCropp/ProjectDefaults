@@ -8,7 +8,7 @@
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType Condition="$(DebugType) == ''">embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <IsPackageProject Condition="'$(IsPackageProject)' == ''">true</IsPackageProject>
+    <IsPackageProject Condition="'$(IsPackageProject)' == '' And $(Configuration) == 'Release'">true</IsPackageProject>
     <RepoDir>$(SolutionDir)</RepoDir>
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
     <!--
