@@ -72,9 +72,6 @@
       BeforeTargets="GenerateNuspec"
       Condition="$(GeneratePackageOnBuild)"
     >
-    <Warning
-       Text="No 'ScmRepositoryUrl' defined."
-       Condition="'$(ScmRepositoryUrl)' == '' And $(IsPackageProject) == true And $(Configuration) == 'Release'" />
     <PropertyGroup>
       <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
