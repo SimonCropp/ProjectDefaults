@@ -53,9 +53,9 @@
   <ItemGroup>
     <Using Remove="System.Net.Http" />
     <Using Include="System.Threading.CancellationToken"
-           Alias="Cancellation" />
+           Alias="Cancel" />
     <Using Include="System.Threading.CancellationTokenSource"
-           Alias="CancellationSource" />
+           Alias="CancelSource" />
   </ItemGroup>
   <ItemGroup
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
