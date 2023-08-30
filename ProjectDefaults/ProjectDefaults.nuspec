@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>ProjectDefaults</id>
-    <version>1.0.91</version>
+    <version>1.0.92</version>
     <authors>Simon Cropp</authors>
     <developmentDependency>true</developmentDependency>
     <license type="expression">MIT</license>
@@ -16,7 +16,8 @@
   </metadata>
   <files>
     <file src="../icon.png" target="icon.png" />
-
+    <file src="editorconfig.txt" target="editorconfig.txt" />
+    <file src="Shared.sln.DotSettings" target="Shared.sln.DotSettings" />
     <file src="*.pp"
           target="contentFiles/cs/netstandard2.0/ProjectDefaults/"/>
     <file src="build\ProjectDefaults.props" target="build\ProjectDefaults.props" />

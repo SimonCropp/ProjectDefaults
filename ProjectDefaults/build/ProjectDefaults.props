@@ -24,6 +24,8 @@
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
+    <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
   </PropertyGroup>
 
   <PropertyGroup
@@ -88,5 +90,16 @@
     <ItemGroup>
       <Analyzer Remove="@(Analyzer)" />
     </ItemGroup>
+  </Target>
+  <Target Name="PatchSettings" BeforeTargets="Build">
+    <Copy
+         SourceFiles="$(EditorConfigPath)"
+         DestinationFiles="$(SolutionDir).editorconfig"
+         SkipUnchangedFiles="true" />
+    <Copy
+         Condition="'$(SolutionDir)' != '' And '$(SolutionDir)' != '*Undefined*'"
+         SourceFiles="$(DotSettingsPath)"
+         DestinationFiles="$(SolutionDir)Shared.sln.DotSettings"
+         SkipUnchangedFiles="true" />
   </Target>
 </Project>
