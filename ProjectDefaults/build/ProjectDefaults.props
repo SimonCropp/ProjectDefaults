@@ -72,8 +72,7 @@
   <Target
       Name="ProjectDefaultsUpdateNuspec"
       BeforeTargets="GenerateNuspec"
-      Condition="$(GeneratePackageOnBuild)"
-    >
+      Condition="$(GeneratePackageOnBuild)">
     <PropertyGroup>
       <RepositoryUrlEx>$(ScmRepositoryUrl.Replace('.git', ''))</RepositoryUrlEx>
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
