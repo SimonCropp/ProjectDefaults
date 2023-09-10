@@ -2,5 +2,5 @@
 *.snk binary
 *.png binary
 
-.editorconfig -text
-*.sln.DotSettings -text
+.editorconfig text eol=lf working-tree-encoding=UTF-8
+Shared.sln.DotSettings text eol=lf working-tree-encoding=UTF-8
