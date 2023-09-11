@@ -24,7 +24,7 @@
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <EditorConfigPath>$(MSBuildThisFileDirectory)../.editorconfig</EditorConfigPath>
+    <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
   </PropertyGroup>
@@ -93,7 +93,6 @@
   </Target>
   <Target Name="PatchSettings" BeforeTargets="Build">
     <Copy
-         Condition="'$(SolutionDir)' != '' And '$(SolutionDir)' != '*Undefined*'"
          SourceFiles="$(EditorConfigPath)"
          DestinationFiles="$(SolutionDir).editorconfig"
          SkipUnchangedFiles="true" />
