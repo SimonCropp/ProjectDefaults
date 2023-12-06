@@ -161,7 +161,7 @@ resharper_braces_for_fixed = required
 resharper_braces_for_for = required
 
 # Xml files
-[*.{xml,config,nuspec,resx,vsixmanifest,csproj,targets,props}]
+[*.{xml,config,nuspec,resx,vsixmanifest,csproj,targets,props,fsproj}]
 indent_size = 2
 # https://www.jetbrains.com/help/resharper/EditorConfig_XML_XmlCodeStylePageSchema.html#resharper_xml_blank_line_after_pi
 resharper_blank_line_after_pi = false
