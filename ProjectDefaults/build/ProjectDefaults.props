@@ -81,16 +81,6 @@
       <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
     </PropertyGroup>
   </Target>
-  <!-- Disable default Inbox Source Generators
-       https://github.com/dotnet/sdk/issues/21006
-       https://github.com/dotnet/designs/blob/main/accepted/2021/InboxSourceGenerators.md -->
-  <Target Name="DisableAnalyzers"
-          BeforeTargets="CoreCompile"
-          Condition="$(EnableAnalyzers) != true">
-    <ItemGroup>
-      <Analyzer Remove="@(Analyzer)" />
-    </ItemGroup>
-  </Target>
   <Target Name="PatchSettings" BeforeTargets="Build">
     <Copy
          SourceFiles="$(EditorConfigPath)"
