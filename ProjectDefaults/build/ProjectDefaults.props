@@ -23,6 +23,7 @@
     <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
+    <NoWarn>$(NoWarn);CA2255</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup
