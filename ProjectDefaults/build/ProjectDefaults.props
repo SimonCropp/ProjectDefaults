@@ -14,7 +14,7 @@
     <!--
     IDE0044: dont recommend private fields
     -->
-    <NoWarn>$(NoWarn);IDE0044;CA1050</NoWarn>
+    <NoWarn>$(NoWarn);IDE0044;CA1050;CA2255</NoWarn>
     <Nullable Condition="'$(Nullable)' != 'disable'">enable</Nullable>
     <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">enable</ImplicitUsings>
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
@@ -23,7 +23,6 @@
     <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
-    <NoWarn>$(NoWarn);CA2255</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup
