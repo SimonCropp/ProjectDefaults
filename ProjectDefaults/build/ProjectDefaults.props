@@ -47,7 +47,9 @@
 
   <PropertyGroup Condition="$(IsPackageProject) == false">
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);CA1861</NoWarn>
   </PropertyGroup>
+
 
   <ItemGroup>
     <Using Remove="System.Net.Http" />
