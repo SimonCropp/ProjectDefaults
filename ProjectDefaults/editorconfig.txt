@@ -14,6 +14,9 @@ charset = utf-8
 # Avoid constant arrays as arguments
 dotnet_diagnostic.CA1861.severity = error
 
+# Declare types in namespaces
+dotnet_diagnostic.CA1050.severity = None
+
 # Microsoft .NET properties
 trim_trailing_whitespace = true
 csharp_preferred_modifier_order = public, private, protected, internal, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async:suggestion
