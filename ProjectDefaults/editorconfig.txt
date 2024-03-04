@@ -133,9 +133,6 @@ dotnet_diagnostic.CA1861.severity = error
 # Use the StringComparison method overloads to perform case-insensitive string comparisons
 dotnet_diagnostic.CA1862.severity = error
 
-# Use CompositeFormat
-dotnet_diagnostic.CA1863.severity = error
-
 # Prefer the IDictionary.TryAdd(TKey, TValue) method
 dotnet_diagnostic.CA1864.severity = error
 
