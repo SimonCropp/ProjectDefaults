@@ -25,7 +25,7 @@ dotnet_diagnostic.CA1805.severity = error
 dotnet_diagnostic.CA1813.severity = error
 
 # Test for empty strings using string length
-dotnet_diagnostic.CA1820.severity = error
+dotnet_diagnostic.CA1820.severity = none
 
 # Remove empty finalizers
 dotnet_diagnostic.CA1821.severity = error
