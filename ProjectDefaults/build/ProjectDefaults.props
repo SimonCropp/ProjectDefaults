@@ -12,8 +12,9 @@
     <RepoDir Condition="Exists('$(SolutionDir)..\.git')">$(SolutionDir)..\</RepoDir>
     <!--
     IDE0044: dont recommend private fields
+    IDE0130: Namespace does not match folder structure
     -->
-    <NoWarn>$(NoWarn);IDE0044;CA1050;CA2255</NoWarn>
+    <NoWarn>$(NoWarn);IDE0044;IDE0130;CA1050;CA2255</NoWarn>
     <Nullable Condition="'$(Nullable)' != 'disable'">enable</Nullable>
     <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">enable</ImplicitUsings>
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
