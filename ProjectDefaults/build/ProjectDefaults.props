@@ -92,7 +92,7 @@
          SkipUnchangedFiles="true" />
     <Copy
          SourceFiles="$(SolutionSettingsPath)"
-         DestinationFiles="$(SolutionPath).DotSettings" 
+         DestinationFiles="$(SolutionPath).DotSettings"
          Condition="'$(SolutionPath)' != '' And '$(SolutionPath)' != '*Undefined*' And !Exists('$(SolutionPath).DotSettings')"
          SkipUnchangedFiles="true" />
   </Target>
