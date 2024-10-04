@@ -41,7 +41,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EmbedUntrackedSources>false</EmbedUntrackedSources>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile Condition="$(GenerateDocumentationFile) == ''">true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild
       Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
   </PropertyGroup>
