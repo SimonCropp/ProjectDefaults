@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <SolutionDir Condition="'$(SolutionDir)'==''">$(ProjectDir)..\</SolutionDir>
-    <LangVersion Condition="$(LangVersion) == ''">11.0</LangVersion>
+    <LangVersion Condition="$(LangVersion) == ''">12.0</LangVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)key.snk</AssemblyOriginatorKeyFile>
     <SignAssembly Condition="$(SignAssembly) != false">true</SignAssembly>
     <DebugType Condition="$(DebugType) == ''">embedded</DebugType>
