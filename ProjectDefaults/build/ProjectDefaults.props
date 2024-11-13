@@ -23,7 +23,6 @@
     <EditorConfigPath>$(MSBuildThisFileDirectory)../editorconfig.txt</EditorConfigPath>
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
-    <PolyGuard>true</PolyGuard>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
