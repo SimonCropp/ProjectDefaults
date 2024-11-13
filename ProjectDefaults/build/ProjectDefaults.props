@@ -24,9 +24,7 @@
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
     <PolyGuard>true</PolyGuard>
-    <EnforceCodeStyleInBuild Condition="$(EnforceCodeStyleInBuild) == ''">true</EnforceCodeStyleInBuild>
-    <TreatWarningsAsErrors Condition="$(TreatWarningsAsErrors) == ''">true</TreatWarningsAsErrors>
-    <ResolveAssemblyReferencesSilent Condition="$(ResolveAssemblyReferencesSilent) == ''">true</ResolveAssemblyReferencesSilent>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <PropertyGroup
