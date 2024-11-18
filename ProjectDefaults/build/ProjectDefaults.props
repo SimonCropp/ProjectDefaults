@@ -64,7 +64,7 @@
     <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net6')) OR $(TargetFramework.StartsWith('net7')) OR $(TargetFramework.StartsWith('net8')) OR $(TargetFramework.StartsWith('net9'))">
+  <ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals($(NETCoreSdkVersion), '6.0'))">
     <Using Include="System.DateOnly" Alias="Date" />
     <Using Include="System.TimeOnly" Alias="Time" />
   </ItemGroup>
