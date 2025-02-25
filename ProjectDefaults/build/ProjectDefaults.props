@@ -15,6 +15,7 @@
     IDE0130: Namespace does not match folder structure
     -->
     <NoWarn>$(NoWarn);IDE0044;IDE0130;CA1050;CA2255</NoWarn>
+    <WarningsAsErrors>$(WarningsAsErrors);ASP0015</WarningsAsErrors>
     <Nullable Condition="'$(Nullable)' != 'disable'">enable</Nullable>
     <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">enable</ImplicitUsings>
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
