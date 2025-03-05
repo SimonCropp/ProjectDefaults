@@ -24,7 +24,6 @@
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup
