@@ -44,6 +44,7 @@
     <GenerateDocumentationFile Condition="$(GenerateDocumentationFile) == ''">true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild
       Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
+    <GenerateSBOM>true</GenerateSBOM>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(IsPackageProject) == false">
