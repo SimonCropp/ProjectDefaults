@@ -24,6 +24,8 @@
     <DotSettingsPath>$(MSBuildThisFileDirectory)../Shared.sln.DotSettings</DotSettingsPath>
     <SolutionSettingsPath>$(MSBuildThisFileDirectory)../Solution.sln.DotSettings</SolutionSettingsPath>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <PackageReadmeFile Condition="Exists('$(SolutionDir)nuget.md')">nuget.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup
@@ -62,7 +64,8 @@
   </ItemGroup>
   <ItemGroup
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
-    <None Include="$(SolutionDir)..\src\icon.png" Pack="true" PackagePath="\"/>
+    <None Condition="Exists('$(SolutionDir)nuget.md')" Include="$(SolutionDir)nuget.md" Pack="true" PackagePath="\"/>
+    <None Include="$(SolutionDir)icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFrameworkVersion)' != '' and $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '6.0'))">
