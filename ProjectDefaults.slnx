@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="appveyor.yml" />
+    <File Path="readme.md" />
+  </Folder>
+  <Project Path="ProjectDefaults/ProjectDefaults.csproj" />
+  <Properties Name="MonoDevelopProperties">
+    <Property Name="StartupItem" Value="Fody\Fody.csproj" />
+  </Properties>
+</Solution>
