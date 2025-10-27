@@ -13,8 +13,9 @@
     <!--
     IDE0044: dont recommend private fields
     IDE0130: Namespace does not match folder structure
+    CA1816: Call GC.SuppressFinalize correctly. usually redundant since only required for un-managed types
     -->
-    <NoWarn>$(NoWarn);IDE0044;IDE0130;CA1050;CA2255</NoWarn>
+    <NoWarn>$(NoWarn);IDE0044;IDE0130;CA1050;CA2255;CA1816</NoWarn>
     <Nullable Condition="'$(Nullable)' != 'disable'">enable</Nullable>
     <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">enable</ImplicitUsings>
     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
