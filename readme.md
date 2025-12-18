@@ -1,5 +1,6 @@
 # <img src="icon.png" height="40px"> ProjectDefaults
 
+https://www.nuget.org/packages/ProjectDefaults
 
 ## Icon
 
