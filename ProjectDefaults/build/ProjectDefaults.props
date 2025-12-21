@@ -86,9 +86,10 @@
     </PropertyGroup>
   </Target>
   <Target Name="PatchSettings" BeforeTargets="Build">
+    <Delete Files="$(SolutionDir).editorconfig" />
     <Copy
          SourceFiles="$(EditorConfigPath)"
-         DestinationFiles="$(SolutionDir).editorconfig"
+         DestinationFiles="$(SolutionDir)..\.editorconfig"
          SkipUnchangedFiles="true" />
     <Copy
          Condition="'$(SolutionDir)' != '' And '$(SolutionDir)' != '*Undefined*'"
