@@ -30,7 +30,7 @@
   </PropertyGroup>
 
   <PropertyGroup
-    Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets'">
+    Condition="$(MSBuildProjectName.EndsWith('.Tests')) Or $(MSBuildProjectName.Contains('Sample')) Or '$(MSBuildProjectName)' == 'Tests' Or '$(MSBuildProjectName)' == 'Helpers' Or '$(MSBuildProjectName)' == 'Shared' Or '$(MSBuildProjectName)' == 'Snippets' Or '$(TestingPlatformDotnetTestSupport)' == 'true'">
     <IsPackageProject>false</IsPackageProject>
   </PropertyGroup>
 
