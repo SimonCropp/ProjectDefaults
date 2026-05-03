@@ -37,8 +37,6 @@
   <PropertyGroup
     Condition="$(IsPackageProject) == true And $(Configuration) == 'Release'">
     <PackageOutputPath>$(RepoDir)nugets</PackageOutputPath>
-    <PackageLicenseExpression
-      Condition="'$(PackageLicenseUrl)' == '' And '$(PackageLicenseFile)' == '' And '$(PackageLicenseExpression)' == '' " >MIT</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <NoPackageAnalysis>true</NoPackageAnalysis>
@@ -83,6 +81,8 @@
       <PackageProjectUrl Condition="$(PackageProjectUrl) == ''">$(RepositoryUrlEx.Replace('.git', ''))</PackageProjectUrl>
       <PackageIcon>icon.png</PackageIcon>
       <Authors>$(RepositoryUrlEx)/graphs/contributors</Authors>
+      <PackageLicenseExpression
+        Condition="'$(PackageLicenseUrl)' == '' And '$(PackageLicenseFile)' == '' And '$(PackageLicenseExpression)' == ''">MIT</PackageLicenseExpression>
     </PropertyGroup>
   </Target>
   <Target Name="PatchSettings" BeforeTargets="Build">
