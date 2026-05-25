@@ -9,6 +9,9 @@ insert_final_newline = true
 indent_size = 4
 charset = utf-8
 
+# Convention (not tool-enforced): line comments go on their own line directly above the code they
+# describe, never trailing at the end of a code line.
+
 # Redundant accessor body
 resharper_redundant_accessor_body_highlighting = error
 
