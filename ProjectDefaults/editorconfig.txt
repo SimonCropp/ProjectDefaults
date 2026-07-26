@@ -48,6 +48,18 @@ resharper_negative_equality_expression_highlighting = error
 # Replace with single call to Count(..)
 resharper_replace_with_single_call_to_count_highlighting = error
 
+# Cast expression can be replaced with explicit type arguments
+resharper_can_replace_cast_with_type_argument_highlighting = error
+
+# Cast expression can be replaced with simplified type arguments
+resharper_can_replace_cast_with_shorter_type_argument_highlighting = error
+
+# Cast expression can be replaced with explicit variable type
+resharper_can_replace_cast_with_variable_type_highlighting = error
+
+# Cast expression can be replaced with lambda return type
+resharper_can_replace_cast_with_lambda_return_type_highlighting = error
+
 # Declare types in namespaces
 dotnet_diagnostic.CA1050.severity = none
 
