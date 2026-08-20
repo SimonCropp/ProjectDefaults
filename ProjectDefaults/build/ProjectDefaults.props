@@ -48,14 +48,9 @@
     <GenerateSBOM>true</GenerateSBOM>
   </PropertyGroup>
 
-  <!--
-  IDE0051: unused private member. In a test or sample project those are usually there for their
-  shape rather than to be called: snapshot fixtures, types a serializer reflects over, members
-  demonstrating an API.
-  -->
   <PropertyGroup Condition="$(IsPackageProject) == false">
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <NoWarn>$(NoWarn);CA1861;IDE0051</NoWarn>
+    <NoWarn>$(NoWarn);CA1861</NoWarn>
   </PropertyGroup>
 
 
