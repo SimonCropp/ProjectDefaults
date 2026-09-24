@@ -44,7 +44,7 @@
     <EmbedUntrackedSources>false</EmbedUntrackedSources>
     <GenerateDocumentationFile Condition="$(GenerateDocumentationFile) == ''">true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild
-      Condition="'$(ContinuousIntegrationBuild)' == '' And $(APPVEYOR) == true">true</ContinuousIntegrationBuild>
+      Condition="'$(ContinuousIntegrationBuild)' == '' And '$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
     <GenerateSBOM>true</GenerateSBOM>
   </PropertyGroup>
 
