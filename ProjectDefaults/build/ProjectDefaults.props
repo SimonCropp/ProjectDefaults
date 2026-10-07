@@ -54,6 +54,27 @@
   </PropertyGroup>
 
 
+  <!--
+  Using items rather than a .pp content file. The SDK materializes a .pp file under obj in
+  RunProduceContentAssets, and skips that target in a project that is cleaned and then built by one
+  MSBuild invocation (as a Rebuild does to a project referenced from outside its solution). The file
+  is then missing from the compile.
+  -->
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Collections" />
+    <Using Include="System.Collections.Generic" />
+    <Using Include="System.IO" />
+    <Using Include="System.Text" />
+    <Using Include="System.Threading" />
+    <Using Include="System.Threading.Tasks" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Collections.Concurrent" />
+  </ItemGroup>
+
   <ItemGroup>
     <Using Remove="System.Net.Http" />
     <Using Include="System.Threading.CancellationToken"
